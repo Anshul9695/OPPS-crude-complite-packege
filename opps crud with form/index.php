@@ -87,6 +87,7 @@ input[type=submit]:hover {
 </head>
 <body>
 <div class="container">
+  <a href="user.php"><input type="submit" value="ManageUser"></a>
 <form action="register.php" method="post" >
     <div class="row">
       <div class="col-25">

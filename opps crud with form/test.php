@@ -24,7 +24,7 @@ $obj=new query();
 //$result=$obj->deleteData('students',$condition_arr);
 
 //UPDATE DATA IN DATABASE TABLE
-$condition_arr=array('id'=>11,'student_name'=>'rahmat ali khan','age'=>'2020/04/12','city'=>'kuchbhi');
+$condition_arr=array('id'=>10,'student_name'=>'check','age'=>'2021/07/14','city'=>'check');
 $result=$obj->updateData('students',$condition_arr,'id',0);
-
+print_r($result);
 ?>

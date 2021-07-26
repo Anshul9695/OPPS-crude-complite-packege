@@ -1,13 +1,20 @@
 <?php
 include "database.php";
 $obj=new query();
- $result=$obj->getData('students');
-
- $id=$_GET['id'];
+if(isset($_GET['id']) && $_GET['id']!=''){
+  $id=$obj->get_safe_str($_GET['id']);
+  $condition_arr=array('id'=>$id);
+  $result=$obj->getData('students','*',$condition_arr);
+  //print_r($result);
+  $students_name=$result['0']['student_name'];
+  $age=$result['0']['age'];
+  $city=$result['0']['city'];
+}
+ // $result=$obj->getData('students','*','','id','asc',7);//select by condition  as id asc and limit then use this
 
 
 // $condition_arr=array('id'=>11,'student_name'=>'rahmat ali khan','age'=>'2020/04/12','city'=>'kuchbhi');
-// $result=$obj->updateData('students',$condition_arr,'id',0);
+
 ?>
 
 
@@ -91,7 +98,7 @@ input[type=submit]:hover {
 </head>
 <body>
 <div class="container">
-<form action="register.php" method="post" >
+<form method="post" action="update.php" >
     <div class="row">
       <div class="col-25">
         <label for="id">Id:</label>
@@ -105,7 +112,7 @@ input[type=submit]:hover {
         <label for="student_name">Student_Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="student_name" name="student_name" placeholder="Enter Your name here..">
+        <input type="text" id="student_name" value="<?php echo $students_name; ?>" name="student_name" placeholder="Enter Your name here..">
       </div>
     </div>
     <div class="row">
@@ -113,7 +120,7 @@ input[type=submit]:hover {
         <label for="age">Age</label>
       </div>
       <div class="col-75">
-      <input type="date" id="age" class="date" name="age" placeholder="Enter Your age here.." >
+      <input type="date" id="age" class="date" value="<?php echo $age; ?>" name="age" placeholder="Enter Your age here.." >
       </div>
     </div>
     <div class="row">
@@ -121,11 +128,11 @@ input[type=submit]:hover {
         <label for="city">City</label>
       </div>
       <div class="col-75">
-      <input type="text" id="city" name="city" placeholder="Enter Your city here..">
+      <input type="text" id="city" value="<?php echo $city; ?>" name="city" placeholder="Enter Your city here..">
       </div>
     </div>
     <div class="row">
-      <input type="submit" name="submit" value="Submit">
+      <input type="submit" name="update" value="Update_Records">
     </div>
   </form>
 </div>

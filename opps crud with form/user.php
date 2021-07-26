@@ -57,10 +57,10 @@ if(isset($result['0'])){
     <td><?php echo $list['city']; ?></td>
 
     <td style="textalign:center">
-    <a href="edit.php?id=<?php echo $list['id'];?>">Edit</a>
+    <a href="edit.php?id=<?php echo $list['id'];?>">Update</a>
     </td>
     <td style="textalign:center;">
-    <a href="delete.php?id?student_name?age?city=<?php echo $list['id']; ?>">Delete</a>
+    <a href="delete.php?id=<?php echo $list['id']; ?>">Delete</a>
 </td>
 
   </tr>

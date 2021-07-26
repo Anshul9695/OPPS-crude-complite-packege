@@ -95,7 +95,8 @@ public function updateData($table,$condition_arr,$where_field,$where_value){
             $i++;
         }
         $sql .=" where $where_field='$where_value'";
-       // echo $sql;
+        //echo $sql;
+         //die();
         $result=$this->connect()->query($sql);
     }
 }
