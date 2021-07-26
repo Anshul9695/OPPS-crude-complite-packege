@@ -11,8 +11,6 @@ if(isset($_GET['id']) && $_GET['id']!=''){
   $city=$result['0']['city'];
 }
  // $result=$obj->getData('students','*','','id','asc',7);//select by condition  as id asc and limit then use this
-
-
 // $condition_arr=array('id'=>11,'student_name'=>'rahmat ali khan','age'=>'2020/04/12','city'=>'kuchbhi');
 
 ?>
